@@ -17,9 +17,7 @@ fromLang.addEventListener("change", () => {
 // https://mymemory.translated.net/doc/spec.php
 btn.addEventListener("click", () => {
     let sentence = fromText.value;
-    // console.log(sentence);
-    // console.log(fromLangVal);
-    // console.log(toLangVal);
+
     if (!sentence) return;
     fetch(
       `https://api.mymemory.translated.net/get?q=${sentence}&langpair=${fromLangVal}|${toLangVal}`
