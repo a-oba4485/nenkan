@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+    src="https://yubinbango.github.io/yubinbango/yubinbango.js"
+    charset="UTF-8"
+    ></script>
+    <script src="{% static 'script.js' %}" defer></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>年間制作</title>
+
+
+
+    <header>
+    <p class="google-style">
+        <span class="o">O</span>
+        <span class="h">h</span>
+        <span class="a1">a</span>
+        <span class="r">r</span>
+        <span class="a2">a</span>翻訳
+    </p>
+    <a href="{% url 'OharaHonyaku:login_detail' %}" class="login">
+        <button>ログイン</button>
+    </a>
+
+    </header>
+
+<body>
+
+
+    </div>
+
+    <select class="fromLang"name="interest" id="interest">
+        <option value="ja-JP">日本語</option>
+        <option value="en-US">英語</option>
+
+    </select>
+    <div class="input">
+        <textarea
+        class="fromText"placeholder="ここにテキストを入力"></textarea>
+    </div>
+    <button class="btn">翻訳</button>
+    <select class="toLang"name="interest" id="interest">
+        <option value="en-US">英語</option>
+        <option value="ja-JP">日本語</option>
+
+
+    </select>
+    <div class="output">
+        <textarea 
+        disabled
+        class ="toText"placeholder="翻訳結果がここに表示されます"></textarea>
+    </div>
+    </div>
+    <!-- <a href="#" class="btn-circle-flat">BUTTON</a> -->
+</body>
+
+
+
+<footer><small>&copy;年間制作<small></footer>
+    
+
+</html>
