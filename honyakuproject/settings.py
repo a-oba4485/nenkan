@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'OharaHonyaku.apps.OharahonyakuConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -49,9 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # プロジェクトのルートに静的ファイルがある場合
-]
+
 
 ROOT_URLCONF = 'honyakuproject.urls'
 
@@ -120,8 +119,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+import os
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+# ログイン成功後のリダイレクト先
+LOGIN_REDIRECT_URL = 'OharaHonyaku:index'
+
+# ログアウト後のリダイレクト先
+LOGOUT_REDIRECT_URL = 'Oharahonyaku:index'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+APPEND_SLASH = False
