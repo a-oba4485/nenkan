@@ -14,7 +14,7 @@ fromLang.addEventListener("change", () => {
   toLang.addEventListener("change", () => {
     toLangVal = toLang.value;
   });
-// https://mymemory.translated.net/doc/spec.php
+
 btn.addEventListener("click", () => {
     let sentence = fromText.value;
 
